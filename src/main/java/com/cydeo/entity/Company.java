@@ -19,7 +19,7 @@ public class Company extends BaseEntity {
     private CompanyStatus companyStatus;
 
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "role_id")
+    @JoinColumn(name = "address_id")
     private Address address;
 
 }
