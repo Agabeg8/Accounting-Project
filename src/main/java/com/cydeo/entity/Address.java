@@ -1,15 +1,15 @@
 package com.cydeo.entity;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Getter
-@Setter
+@Entity
 @Table(name = "addresses")
-public class Address {
+public class Address extends BaseEntity{
 
     private String addressLine1;
     private String addressLine2;
