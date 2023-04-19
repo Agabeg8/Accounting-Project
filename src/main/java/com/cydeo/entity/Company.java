@@ -11,13 +11,15 @@ import lombok.*;
 public class Company extends BaseEntity {
 
     @Column(unique = true, nullable = false)
-    String title;
-    String phone;
-    String website;
-    CompanyStatus companyStatus;
+    private String title;
+    private String phone;
+    private String website;
+
+    @Enumerated(EnumType.STRING)
+    private CompanyStatus companyStatus;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "role_id")
-    Address address;
+    private Address address;
 
 }
