@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+@Entity //DB tables created
 @Data
 @NoArgsConstructor
 @Table(name = "products")
@@ -15,7 +15,7 @@ public class Product extends BaseEntity{
     private int quantityInStock;
     private int lowLimitAlert;
     @Enumerated(EnumType.STRING)
-    ProductUnit productUnit;
+    private ProductUnit productUnit;
     @ManyToOne(fetch = FetchType.EAGER)
-    Category category;
+    private Category category;
 }
