@@ -12,13 +12,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/User")
 public class UserController {
 
-
     private final RoleService roleService;
     private final UserService userService;
-    public UserController(UserService userService, RoleService roleService) {
+
+    public UserController(RoleService roleService, UserService userService) {
         this.roleService = roleService;
         this.userService = userService;
     }
+
 
     @GetMapping("/create")
     public String createUser(Model model) {
@@ -27,6 +28,6 @@ public class UserController {
         model.addAttribute("roles", roleService.listAllRoles());
         model.addAttribute("users", userService.listAllUsers());
 
-        return "/user/create";
+        return "/user/user-create";
     }
 }

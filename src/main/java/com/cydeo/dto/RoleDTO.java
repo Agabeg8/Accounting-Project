@@ -6,6 +6,8 @@ import lombok.ToString;
 
 @NoArgsConstructor
 @ToString
-@AllArgsConstructor
 public class RoleDTO {
+
+    private Long id;
+    private String description;
 }
